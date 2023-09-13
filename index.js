@@ -282,3 +282,123 @@ app.use(path.ingredientesPath, router.get('/ejercicio21', async (req, res) => {
         res.status(404).json({message: error.message});
     }
 }))
+
+// 22. Actualizar la descripción del “Pan” a “Pan fresco y crujiente”
+app.use(path.ingredientesPath, router.get('/ejercicio22', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.updateOne({nombre: "Pan"},{$set: {descripcion: 'Pan fresco y crujiente'}});
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 23. Encontrar todas las hamburguesas que contienen “Tomate” o “Lechuga” como ingredientes
+app.use(path.hamburguesasPath, router.get('/ejercicio23', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find({$or : [{ingredientes: 'Tomate'}, {ingredientes: 'Lechuga'}]}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+//24. Listar todos los chefs excepto “ChefA”
+app.use(path.chefsPath, router.get('/ejercicio24', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await chefs.find({nombre: {$ne: 'ChefA'}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 25. Incrementar en $2 el precio de todas las hamburguesas de la categoría “Gourmet”
+app.use(path.hamburguesasPath, router.get('/ejercicio25', async  (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.updateMany({categoria: 'Gourmet'}, {$inc: {precio: 2}});
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 26. Listar todos los ingredientes en orden alfabético
+app.use(path.ingredientesPath, router.get('/ejercicio26', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.find().sort({nombre: 1}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 27. Encontrar la hamburguesa más cara
+app.use(path.hamburguesasPath, router.get('/ejercicio27', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find().sort({precio: -1}).limit(1).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 28. Agregar “Pepinillos” a todas las hamburguesas de la categoría “Clásica”
+app.use(path.hamburguesasPath, router.get('/ejercicio28', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.updateMany({categoria: 'Clásica'}, {$push: {ingredientes: 'Pepinillos'}});
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 29. Eliminar todos los chefs que tienen una especialidad en “Cocina Vegetariana”
+app.use(path.chefsPath, router.get('/ejercicio29', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await chefs.deleteMany({especialidad: 'Cocina Vegetariana'});
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 30. Encontrar todas las hamburguesas que contienen exactamente 7 ingredientes
+app.use(path.hamburguesasPath, router.get('/ejercicio30', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find({ingredientes: {$size: 7}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 31. Encontrar la hamburguesa más cara que fue preparada por un chef especializado en “Gourmet”
+app.use(path.chefsPath, router.get('/ejercicio31', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
