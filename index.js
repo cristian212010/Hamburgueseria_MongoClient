@@ -1,55 +1,284 @@
 import express from 'express';
 import { MongoClient } from 'mongodb';
-import { Router } from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const router = express.Router();
+const port = process.env.PORT256;
 
-const client = new MongoClient('mongodb+srv://cristian:12345@hamburgueseriacluster0.sj6qm3w.mongodb.net/');
+const client = new MongoClient(process.env.DDBB256);
+
 const db = client.db('hamburgueseria');
+const ingredientes = db.collection('ingredientes');
+const hamburguesas = db.collection('hamburguesas');
+const chefs = db.collection('chefs');
+const categorias = db.collection('categorias');
 
 const path = {
     ingredientesPath: '/api/ingredientes',
-    hamburguesasPath: '/api/hamburguesas'
-}
-
-async function connectdb() {
-    try {
-        await client.connect();
-        console.log('db online');
-    } catch (error) {
-        console.log(error);
-    }
+    hamburguesasPath: '/api/hamburguesas',
+    chefsPath: '/api/chefs',
+    categoriasPath: '/api/categorias'
 }
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}`);
 })
 
-connectdb();
-
-const router = Router();
-
 app.use(express.json());
 
 // 1
-app.use(path.ingredientesPath, router.get('/all', async (req, res)=>{
+app.use(path.ingredientesPath, router.get('/ejercicio1', async (req, res)=>{
     try {
-        const collection = db.collection('ingredientes');
-        const result = await collection.find({stock: {$lt:400}}).toArray();
-        res.send(result);
+        await client.connect();
+        const result = await ingredientes.find({stock: {$lt:400}}).toArray();
+        res.json(result)
+        client.close();
     } catch (error) {
-        console.log(error);
+        res.status(404).json({message: error.message});
     }
 }));
 
 // 2
-app.use(path.hamburguesasPath, router.get('/vegetarianas', async (req, res)=>{
+app.use(path.hamburguesasPath, router.get('/ejercicio2', async (req, res)=>{
     try {
-        const collection = db.collection('hamburguesas');
-        const result = await collection.find({categoria: "Vegetariana"}).toArray();
+        await client.connect();
+        const result = await hamburguesas.find({categoria: "Vegetariana"}).toArray();
         res.send(result);
+        client.close();
     } catch (error) {
-        console.log(error);
+        res.status(404).json({message: error.message});
     }
 }));
+
+// 3
+app.use(path.chefsPath, router.get('/ejercicio3', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await chefs.find({especialidad: "Carnes"}).toArray();
+        res.send(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 4
+app.use(path.ingredientesPath, router.get('/ejercicio4', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.updateMany({}, { $mul: { precio: 1.5 }});
+        res.send('Precio incrementado por 1.5');
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 5
+app.use(path.hamburguesasPath, router.get('/ejercicio5', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find({ chef: 'ChefB' }).toArray();
+        res.send(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 6
+app.use(path.categoriasPath, router.get('/ejercicio6', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await categorias.find().toArray();
+        res.send(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 7
+app.use(path.ingredientesPath, router.get('/ejercicio7', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.deleteMany({stock:0});
+        res.send(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 8
+app.use(path.hamburguesasPath, router.get('/ejercicio8', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.updateOne({nombre: "Clásica"}, {$push: {ingredientes: "Lechuga"}});
+        res.send(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 9. Encontrar todas las hamburguesas que contienen “Pan integral” como ingrediente
+app.use(path.hamburguesasPath, router.get('/ejercicio9', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find({ingredientes: "Pan integral"}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 10. Cambiar la especialidad del “ChefC” a “Cocina Internacional”
+app.use(path.chefsPath, router.get('/ejercicio10', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await chefs.updateOne({nombre: "ChefC"}, {$set: {especialidad: "Cocina Internacional"}});
+        res.send(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 11. Encontrar el ingrediente más caro
+app.use(path.ingredientesPath, router.get('/ejercicio11', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.find().sort({precio: -1}).limit(1).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }   
+}));
+
+// 12. Encontrar las hamburguesas que no contienen “Queso cheddar” como ingrediente
+app.use(path.hamburguesasPath, router.get('/ejercicio12', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find({ingredientes: {$ne: "Queso cheddar"}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}));
+
+// 13. Incrementar el stock de “Pan” en 100 unidades
+app.use(path.ingredientesPath, router.get('/ejercicio13', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.updateOne({ nombre: 'Pan' }, { $inc : { stock: 100 } });
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 14. Encontrar todos los ingredientes que tienen una descripción que contiene la palabra “clásico”
+app.use(path.ingredientesPath, router.get('/ejercicio14', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.find({descripcion: {$regex: "clásico"}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }   
+}))
+
+// 15. Listar las hamburguesas cuyo precio es menor o igual a $9
+app.use(path.hamburguesasPath, router.get('/ejercicio15', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find({precio: {$lte: 9}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 16. Contar cuántos chefs hay en la base de datos
+app.use(path.chefsPath, router.get('/ejercicio16', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await chefs.countDocuments();
+        res.json(`La cantidad de chefs es ${result}`);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 17. Encontrar todas las categorías que contienen la palabra “gourmet” en su descripción
+app.use(path.categoriasPath, router.get('/ejercicio17', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await categorias.find({descripcion: {$regex: "gourmet"}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 18. Eliminar las hamburguesas que contienen menos de 5 ingredientes
+app.use(path.hamburguesasPath, router.get('/ejercicio18', async (req, res) =>{
+    try {
+        await client.connect();
+        const result = await hamburguesas.deleteMany({$expr: {$lt: [{$size: "$ingredientes"}, 5]}});
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 19. Agregar un nuevo chef a la colección con una especialidad en “Cocina Asiática”
+app.use(path.chefsPath, router.get('/ejercicio19', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await chefs.insertOne({
+            nombre: "ChefD",
+            especialidad: "Cocina Asiática"
+        });
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 20. Listar las hamburguesas en orden ascendente según su precio
+app.use(path.hamburguesasPath, router.get('/ejercicio20', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await hamburguesas.find().sort({precio: 1}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))
+
+// 21. Encontrar todos los ingredientes cuyo precio sea entre $2 y $5
+app.use(path.ingredientesPath, router.get('/ejercicio21', async (req, res) => {
+    try {
+        await client.connect();
+        const result = await ingredientes.find({precio: {$gte: 2, $lte: 5}}).toArray();
+        res.json(result);
+        client.close();
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}))

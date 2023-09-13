@@ -1,0 +1,1 @@
+cada linea de codigo en el .env es una variable de entorno
