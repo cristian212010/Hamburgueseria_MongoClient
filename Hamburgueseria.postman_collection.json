@@ -1,0 +1,811 @@
+{
+	"info": {
+		"_postman_id": "3c4c5a95-2d9a-48a1-bbd9-c9a372485bc8",
+		"name": "Hamburgueseria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23176952",
+		"_collection_link": "https://cloudy-space-116545.postman.co/workspace/NODE~8bb5af6f-a170-4219-9884-26a2cce66d83/collection/23176952-3c4c5a95-2d9a-48a1-bbd9-c9a372485bc8?action=share&source=collection_link&creator=23176952"
+	},
+	"item": [
+		{
+			"name": "endpoint1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio1",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio2",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio3",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio4",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio5",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio6",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio7",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio8",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio9",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio10",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint11",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio11",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio12",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint13",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio13",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint14",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio14",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint15",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio15",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint16",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio16",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint17",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio17",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint18",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio18",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint19",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio19",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint20",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio20",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint21",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio21",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint22",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio22",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint23",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio23",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint24",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio24",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint25",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio25",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint26",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio26",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint27",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio27",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint28",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio28",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint29",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio29",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint30",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio30",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint31",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio31",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint32",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio32",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint33",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio33",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint34",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio34",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint35",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio35",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint36",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio36",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio36"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint37",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio37",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio37"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint38",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio38",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint39",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio39",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint40",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6996/api/hamburguesas/ejercicio40",
+					"host": [
+						"localhost"
+					],
+					"port": "6996",
+					"path": [
+						"api",
+						"hamburguesas",
+						"ejercicio40"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
